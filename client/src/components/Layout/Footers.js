@@ -17,6 +17,6 @@ const Footers = () => {
         
      </div>
   )
-}
+};
 
 export default Footers
