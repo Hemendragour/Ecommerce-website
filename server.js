@@ -4,14 +4,17 @@ import express from "express";
 import colors from "colors";
 import morgan from "morgan";
 import authRoutes from "./routes/authRoute.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+
 const app = express();
 
 // import connectDB from "./config/db.js";
 import mongoose from "mongoose";
 import cors from "cors";
-app.use(cors({ 
+app.use(cors({
   origin: true,
-   credentials: true }));
+  credentials: true
+}));
 
 // config
 // app.use(cors());
@@ -36,7 +39,8 @@ app.use(morgan("dev"));
 
 
 // routes
-app.use("/api/v1/auth", authRoutes,);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/category", categoryRoutes);
 
 // rest api\
 app.get("/", (req, res) => {
