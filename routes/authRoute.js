@@ -13,7 +13,7 @@ router.post("/login", loginController)
 
 // forgetpassword post
 
-router.post("/forget-password", forgetPasswordController)
+router.post("/forget-password", forgetPasswordController);
 
 
 
