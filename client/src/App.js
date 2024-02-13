@@ -16,6 +16,8 @@ import CreateProduct from "./pages/Admin/CreateProduct";
 import Users from "./pages/Admin/Users";
 import Orders from "./pages/user/Orders";
 import Profile from "./pages/user/Profile";
+import Products from "./pages/Admin/Products";
+import UpdateProduct from "./pages/Admin/Updateproduct";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -36,7 +38,14 @@ function App() {
           <Route path="Admin" element={< AdminDashboard />} />
           <Route path="Admin/create-category" element={< CreateCategory />} />
           <Route path="Admin/create-product" element={< CreateProduct />} />
+          {/* <Route path="Admin/update-product/:slug" element={< CreateProduct />} /> */}
+
+          <Route path="admin/product/:slug" element={<UpdateProduct />} />
+          {/* <Route path="admin/products" element={<Products />} /> */}
+          {/* <Route path="admin/users" element={<Users />} /> */}
+          {/* <Route path="admin/orders" element={<AdminOrders />} /> */}
           <Route path="Admin/users" element={< Users />} />
+          <Route path="Admin/products" element={<Products />} />
 
         </Route>
         <Route path="/about" element={<About />}></Route>

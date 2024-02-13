@@ -7,6 +7,8 @@ export const createProductController = async (req, res) => {
         const { name, description, price, category, quantity, shipping } =
             req.fields;
         const { photo } = req.files;
+        console.log(photo)
+
         //alidation
         switch (true) {
             case !name:
@@ -134,6 +136,7 @@ export const updateProductController = async (req, res) => {
         const { name, description, price, category, quantity, shipping } =
             req.fields;
         const { photo } = req.files;
+
         //alidation
         switch (true) {
             case !name:
