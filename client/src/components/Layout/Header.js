@@ -5,10 +5,13 @@ import { useAuth } from '../../context/auth'
 // import { toast } from 'react-toastify'
 // import { Toast } from 'react-toastify/dist/components'
 import toast from 'react-hot-toast'
-
+import SearchInput from '../Form/InputSearch'
+import useCategory from '../../hooks/useCategory'
+ 
 
 const Header = () => {
   const [auth, setauth] = useAuth()
+  const categories = useCategory();
   const handleLogout = () => {
     console.log("gfdgfdgfg")
     setauth({
@@ -33,14 +36,43 @@ const Header = () => {
             < Link to="/" className="navbar-brand"><BiShoppingBag />
               ecommerce app   </ Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <SearchInput />
               <li className="nav-item">
                 < NavLink to="/" className="nav-link "  >Home</ NavLink>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 < NavLink
                   to="/categaory" className="nav-link "
-                > : categaory</ NavLink>
+                >  categaory</ NavLink>
+              </li>
+               */}
+
+<li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to={"/categories"}
+                  data-bs-toggle="dropdown"
+                >
+                  Categories
+                </Link>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to={"/categories"}>
+                      All Categories
+                    </Link>
+                  </li>
+                  {categories?.map((c) => (
+                    <li>
+                      <Link
+                        className="dropdown-item"
+                        to={`/category/${c.slug}`}
+                      >
+                        {c.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </li>
 
               {!auth.user ? (
@@ -109,9 +141,9 @@ const Header = () => {
                       <li>
                         <NavLink
                           to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
-                        }`}
+                            }`}
 
-                           
+
                           className="dropdown-item"
                         >
                           Dashboard
@@ -155,12 +187,12 @@ export default Header
 // import React from "react";
 // import { NavLink, Link } from "react-router-dom";
 // import { useAuth } from "../../context/auth";
-// import toast from "react-hot-toast";
-// import SearchInput from "../Form/SearchInput";
+// // import toast from "react-hot-toast";
+// import SearchInput from "../../Form/SearchInput.js";
 // import useCategory from "../../hooks/useCategory";
-// import { useCart } from "../../context/cart";
-// import { Badge } from "antd";
-
+// // import { useCart } from "../../context/cart";
+// // import { Badge } from "antd";
+ 
 // const Header = () => {
 //   const [auth, setAuth] = useAuth();
 //   const [cart] = useCart();
