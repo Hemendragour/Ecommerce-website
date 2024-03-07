@@ -20,6 +20,10 @@ import Products from "./pages/Admin/Products";
 import UpdateProduct from "./pages/Admin/Updateproduct";
 import Search from "./pages/Search";
 import ProductDetails from "./pages/ProductDetails";
+import Categories from "./pages/Categories";
+import CategoryProduct from "./pages/CategoryProduct";
+import CartPage from "./pages/CartPage";
+import AdminOrders from "./pages/Admin/AdminOrders";
 // import Search from "antd/es/input/Search";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
@@ -29,6 +33,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/cart" element={<CartPage />} />
+
+        <Route path="/category/:slug" element={<CategoryProduct />} />
+
         <Route path="/search" element={<Search />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
 
@@ -47,9 +56,9 @@ function App() {
           {/* <Route path="Admin/update-product/:slug" element={< CreateProduct />} /> */}
 
           <Route path="admin/product/:slug" element={<UpdateProduct />} />
-          {/* <Route path="admin/products" element={<Products />} /> */}
-          {/* <Route path="admin/users" element={<Users />} /> */}
-          {/* <Route path="admin/orders" element={<AdminOrders />} /> */}
+          <Route path="admin/products" element={<Products />} />
+          <Route path="admin/users" element={<Users />} />
+          <Route path="admin/orders" element={<AdminOrders />} />
           <Route path="Admin/users" element={< Users />} />
           <Route path="Admin/products" element={<Products />} />
 

@@ -9,15 +9,18 @@ import 'antd/dist/reset.css';
 
 import UserContext, { AuthProvider } from './context/auth';
 import { SearchProvider } from './context/wordsearch';
+import { CartProvider } from './context/cart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AuthProvider>
     <SearchProvider>
-      <BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
 
-        <App />
+          <App />
 
-      </BrowserRouter>
+        </BrowserRouter>
+      </CartProvider>
     </SearchProvider>
 
   </AuthProvider>
